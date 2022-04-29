@@ -1,8 +1,10 @@
 <script>
 	import { page } from '$app/stores';
 
-	let src = localStorage.getItem('src');
-	let colors = [];
+	let src =
+		localStorage.getItem('src') ||
+		'https://f.hellowork.com/blogdumoderateur/2017/08/youtube-logo.gif';
+	let colors = ['#000000'];
 
 	$: localStorage.setItem('src', src);
 </script>
@@ -59,6 +61,8 @@
 		width: 20em;
 		outline: none;
 		z-index: 11;
+
+		box-shadow: 0 0 1em rgba(black, 0.1);
 	}
 
 	img {
@@ -71,11 +75,12 @@
 
 		display: block;
 		border-radius: 1em;
-		width: 25em;
 		height: 25em;
 		object-fit: cover;
 		z-index: 10;
 		border: none;
+
+		box-shadow: 0 0 1em rgba(black, 0.1);
 	}
 
 	.colors {
